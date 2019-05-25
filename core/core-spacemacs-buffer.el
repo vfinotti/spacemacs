@@ -115,8 +115,9 @@ FILE: the path to the file containing the banner."
   "Choose a banner according to `dotspacemacs-startup-banner'and insert it.
 in spacemacs buffer along with quick buttons underneath.
 Easter egg:
+Doge inverted special text banner can be reachable via `997', `doge-inverted', or `random'.
 Doge special text banner can be reachable via `999', `doge' or `random*'.
-Cate special text banner can de reachable via `998', `cat' or `random*'.
+Cat special text banner can de reachable via `998', `cat' or `random*'.
 `random' ignore special banners whereas `random*' does not."
   (let ((banner (spacemacs-buffer//choose-banner))
         (buffer-read-only nil))
@@ -160,6 +161,8 @@ Cate special text banner can de reachable via `998', `cat' or `random*'.
            (spacemacs-buffer//choose-random-text-banner))
           ((eq 'random* dotspacemacs-startup-banner)
            (spacemacs-buffer//choose-random-text-banner t))
+          ((eq 'doge-inverted dotspacemacs-startup-banner)
+           (spacemacs-buffer//get-banner-path 997))
           ((eq 'doge dotspacemacs-startup-banner)
            (spacemacs-buffer//get-banner-path 999))
           ((eq 'cat dotspacemacs-startup-banner)
